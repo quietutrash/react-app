@@ -35,7 +35,7 @@ class Directory extends Component {
                 }
             ],
         };
-
+    }
         render() {
             const directory = this.state.campsites.map(campsite => {
                 return (
@@ -55,6 +55,7 @@ class Directory extends Component {
                 </div>
             );
         }
+        
 }
 
 export default Directory;
