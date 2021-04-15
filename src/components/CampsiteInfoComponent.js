@@ -1,21 +1,21 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
-  function RenderCampsite({campsite}) {
-        return (
-            <div className="col-md-5 m-1">
-                <Card>
-                    <CardImg top src={campsite.image} alt={campsite.name} />
-                    <CardBody>
-                        <CardTitle>{campsite.name}</CardTitle>
-                        <CardText>{campsite.description}</CardText>
-                    </CardBody>
-                </Card>
-            </div>
-        )
-    }
+function RenderCampsite({ campsite }) {
+    return (
+        <div className="col-md-5 m-1">
+            <Card>
+                <CardImg top src={campsite.image} alt={campsite.name} />
+                <CardBody>
+                    <CardTitle>{campsite.name}</CardTitle>
+                    <CardText>{campsite.description}</CardText>
+                </CardBody>
+            </Card>
+        </div>
+    )
+}
 
-function RenderComments({comments}) {
+function RenderComments({ comments }) {
        if (comments) {
            return (
                <div className="col-md-5 m-1">
@@ -42,7 +42,7 @@ function CampsiteInfo(props) {
         return (
             <div className="container">
                 <div className="row">
-                    <renderCampsite campsite={props.campsite} />
+                    <RenderCampsite campsite={props.campsite} />
                     <RenderComments campsite={props.comments} />
                 </div>
             </div>
