@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 function RenderCampsite({campsite}) {
@@ -16,24 +16,24 @@ function RenderCampsite({campsite}) {
 }
 
 function RenderComments({comments}) {
-       if (comments) {
-           return (
-               <div className="col-md-5 m-1">
-                   <h4>Comments</h4>
-                       {comments.map(comment => {
-                           return (
-                               <div key={comment.id}>
-                                   <p>
-                                       {comment.text}<br />
-                                       {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
-                                   </p>
-                               </div>
-                           );
-                       })}
-               </div>
-           );
-       }
-       return <div />;
+    if (comments) {
+        return (
+            <div className="col-md-5 m-1">
+                <h4>Comments</h4>
+                    {comments.map(comment => {
+                        return (
+                            <div key={comment.id}>
+                                <p>
+                                    {comment.text}<br />
+                                    {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
+                                </p>
+                            </div>
+                         );
+                    })}
+            </div>
+        );
+    }
+    return <div />;
  }
 
 function CampsiteInfo(props) {
