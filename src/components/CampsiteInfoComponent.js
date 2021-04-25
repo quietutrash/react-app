@@ -14,8 +14,10 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Control, LocalForm, Errors } from "react-redux-form";
+
 const maxLength = (len) => (val) => !val || val.length <= len;
 const minLength = (len) => (val) => val && val.length >= len;
+
 function RenderCampsite({ campsite }) {
   return (
     <div className="col-md-5 m-1">
@@ -28,6 +30,7 @@ function RenderCampsite({ campsite }) {
     </div>
   );
 }
+
 function RenderComments({ comments }) {
   if (comments) {
     return (
@@ -55,6 +58,7 @@ function RenderComments({ comments }) {
   }
   return <div />;
 }
+
 class CommentForm extends Component {
   constructor(props) {
     super(props);
@@ -143,6 +147,7 @@ class CommentForm extends Component {
     );
   }
 }
+
 function CampsiteInfo(props) {
   if (props.campsite) {
     return (
@@ -168,4 +173,5 @@ function CampsiteInfo(props) {
   }
   return <div />;
 }
+
 export default CampsiteInfo;
