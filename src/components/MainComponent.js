@@ -14,6 +14,7 @@ import {
   fetchComments,
   fetchPromotions,
 } from "../redux/ActionCreators";
+import { actions } from "react-redux-form";
 
 const mapStateToProps = (state) => {
   return {
