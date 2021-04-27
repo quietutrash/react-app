@@ -14,8 +14,8 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Control, LocalForm, Errors } from "react-redux-form";
-import { Loading } from './LoadingComponent';
-import { baseUrl } from '../shared/baseUrl';
+import { Loading } from "./LoadingComponent";
+import { baseUrl } from "../shared/baseUrl";
 
 const maxLength = (len) => (val) => !val || val.length <= len;
 const minLength = (len) => (val) => val && val.length >= len;
@@ -77,7 +77,12 @@ class CommentForm extends Component {
   }
   handleSubmit(values) {
     this.toggleModal();
-    this.props.addComment(this.props.campsiteId, values.rating, values.author, values.text);
+    this.props.addComment(
+      this.props.campsiteId,
+      values.rating,
+      values.author,
+      values.text
+    );
   }
   render() {
     return (
@@ -152,8 +157,8 @@ class CommentForm extends Component {
 function CampsiteInfo(props) {
   if (props.isLoading) {
     return (
-      <div className='container'>
-        <div className='row'>
+      <div className="container">
+        <div className="row">
           <Loading />
         </div>
       </div>
@@ -161,9 +166,9 @@ function CampsiteInfo(props) {
   }
   if (props.errMess) {
     return (
-      <div className='container'>
-        <div className='row'>
-          <div className='col'>
+      <div className="container">
+        <div className="row">
+          <div className="col">
             <h4>{props.errMess}</h4>
           </div>
         </div>
@@ -187,7 +192,7 @@ function CampsiteInfo(props) {
         </div>
         <div className="row">
           <RenderCampsite campsite={props.campsite} />
-          <RenderComments 
+          <RenderComments
             comments={props.comments}
             addComment={props.addComment}
             campsiteId={props.campsite.id}
