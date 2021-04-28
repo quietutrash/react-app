@@ -29,8 +29,8 @@ function Directory(props) {
 
     if (props.campsites.isLoading) {
         return (
-            <div className='container'>
-                <div className='row'>
+            <div className="container">
+                <div className="row">
                     <Loading />
                 </div>
             </div>
@@ -38,9 +38,9 @@ function Directory(props) {
     }
     if (props.campsites.errMess) {
         return (
-            <div className='container'>
-                <div className='row'>
-                    <div className='col'>
+            <div className="container">
+                <div className="row">
+                    <div className="col">
                         <h4>{props.campsites.errMess}</h4>
                     </div>
                 </div>
@@ -50,9 +50,9 @@ function Directory(props) {
     return (
         <div className="container">
             <div className="row">
-                <div className='col'>
+                <div className="col">
                     <Breadcrumb>
-                        <BreadcrumbItem><Link to='/home'>Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                         <BreadcrumbItem active>Directory</BreadcrumbItem>
                     </Breadcrumb>
                     <h2>Directory</h2>
